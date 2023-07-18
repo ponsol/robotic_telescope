@@ -1,0 +1,4 @@
+initial_positions:
+  az_joint: 0.0
+  el_joint: 0.0
+  eef_joint: 0.0

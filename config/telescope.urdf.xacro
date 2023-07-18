@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="telescope">
+
+    <xacro:include filename="urdf/tel.urdf" />
+
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="ros2_control_hardware_type" default="mock_components" />
+    <xacro:include filename="telescope.ros2_control.xacro" />
+
+    <xacro:telescope_ros2_control name="TelController" initial_positions_file="$(arg initial_positions_file)" ros2_control_hardware_type="$(arg ros2_control_hardware_type)"/>
+
+</robot>

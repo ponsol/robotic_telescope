@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robotic_telescope
+    relative_path: urdf/tel.urdf
+  SRDF:
+    relative_path: config/telescope.srdf.xacro
+  CONFIG:
+    author_name: SJK
+    author_email: sjk@sjk.com
+    generated_timestamp: 1519152260
