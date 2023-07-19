@@ -8,16 +8,18 @@
   <group_state name="park" group="telgroup">
     <joint name="el_joint" value="1.57" />
     <joint name="az_joint" value="1.57" />
+    <joint name="eef_joint" value="0.0" />
   </group_state>
 
   <group_state name="zenith" group="telgroup">
     <joint name="el_joint" value="0.0" />
     <joint name="az_joint" value="1.57" />
+    <joint name="eef_joint" value="0.0" />
   </group_state>
 
 
   <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="base_link" />
-  <end_effector name="eef_link" parent_link="el_link" group="telgroup" parent_group="telgroup"/>
+  <end_effector name="eef_link" parent_link="el_link" group="telgroup" parent_group=""/>
 
 
     <disable_collisions link1="azimuth_link" link2="base_link" reason="Never"/>
