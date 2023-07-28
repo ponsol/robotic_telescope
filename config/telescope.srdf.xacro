@@ -5,11 +5,18 @@
         <chain base_link="base_link" tip_link="eef_link"/>
   </group>
 
-  <group_state name="park" group="telgroup">
-    <joint name="el_joint" value="1.57" />
-    <joint name="az_joint" value="1.57" />
+  <group_state name="point" group="telgroup">
+    <joint name="az_joint" value="0.524" />
+    <joint name="el_joint" value="0.8425" />
     <joint name="eef_joint" value="0.0" />
   </group_state>
+
+  <group_state name="park" group="telgroup">
+    <joint name="az_joint" value="1.569" />
+    <joint name="el_joint" value="-1.569" />
+    <joint name="eef_joint" value="0.0" />
+  </group_state>
+
 
   <group_state name="zenith" group="telgroup">
     <joint name="el_joint" value="0.0" />
@@ -21,15 +28,19 @@
   <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="base_link" />
   <end_effector name="eef_link" parent_link="el_link" group="telgroup" parent_group=""/>
 
-
-    <disable_collisions link1="azimuth_link" link2="base_link" reason="Never"/>
-    <disable_collisions link1="azimuth_link" link2="base_link2" reason="Adjacent"/>
-    <disable_collisions link1="azimuth_link" link2="el_dummy" reason="Never"/>
-    <disable_collisions link1="azimuth_link" link2="el_link" reason="Adjacent"/>
+    <disable_collisions link1="azimuth_bracket" link2="azimuth_servo" reason="Adjacent"/>
+    <disable_collisions link1="azimuth_bracket" link2="base_link" reason="Never"/>
+    <disable_collisions link1="azimuth_bracket" link2="base_link2" reason="Adjacent"/>
+    <disable_collisions link1="azimuth_servo" link2="base_link" reason="Never"/>
+    <disable_collisions link1="azimuth_servo" link2="base_link2" reason="Never"/>
+    <disable_collisions link1="azimuth_servo" link2="el_link" reason="Adjacent"/>
     <disable_collisions link1="base_link" link2="base_link2" reason="Adjacent"/>
-    <disable_collisions link1="base_link" link2="el_dummy" reason="Never"/>
     <disable_collisions link1="base_link" link2="el_link" reason="Never"/>
-    <disable_collisions link1="base_link2" link2="el_dummy" reason="Never"/>
     <disable_collisions link1="base_link2" link2="el_link" reason="Never"/>
-    <disable_collisions link1="el_dummy" link2="el_link" reason="Adjacent"/>
+
+
+    <disable_collisions link1="azimuth_bracket" link2="el_link" reason="Never"/>
+
+
+
 </robot>
